@@ -1,4 +1,4 @@
 chains
 ======
 
-Repository for A Thing In Chains
+An implementation of Markov chains using PHP, JavaScript, and HTML.
