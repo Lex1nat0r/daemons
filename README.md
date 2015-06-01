@@ -1,4 +1,7 @@
-A Thing in Chains
+A Panoply of Daemons
 ======
 
-An implementation of Markov chains using PHP, JavaScript, and HTML.
+Markov chains + Milton
+Based on [A Thing in Chains](https://github.com/lex1nat0r/chains).
+
+
