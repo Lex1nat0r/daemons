@@ -5,12 +5,11 @@ html, body {
 }
 
 body {
-    background-image:url('img/chains128Line.png');
     font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+    background-color:#606060;
 }
 
-div#chains {
-    background-image:url('img/sprinkles.png');
+div#daemons {
     position:absolute;
     top:2%;
     left:15%;
@@ -30,6 +29,7 @@ textarea#chained {
     margin-right:auto;
     margin-bottom:10px;
     border-radius:5px;
+    width:95%;
 }
 
 div#footer {
@@ -38,7 +38,7 @@ div#footer {
     height:5%;
     width:90%;
     left:5%;
-    background-image:url('img/sprinkles.png');
+/*    background-image:url('img/sprinkles.png'); */
     text-align:center;
     box-shadow: 0 0 0.4em 0.4em #666;
     border-radius:5px;

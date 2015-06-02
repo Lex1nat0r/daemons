@@ -30,12 +30,12 @@
 	<input type="button" id="chain" value="Make Chains">
       </p>
       <div id="spinner">
-	<img src="img/chainer128Line.png">
+	<img src="img/daemons128.png">
       </div>
       <div id="spinning">
-	<img src="img/chainer128Line.gif">
+	<img src="img/daemons128.gif">
       </div>
-      <textarea id="chained" rows="10" cols="150"></textarea>
+      <textarea id="chained" rows="10"></textarea>
     </div>
   </body>
 </html>
