@@ -20,9 +20,7 @@ $(document).ready(function() {
 	    $("#spinning").show();
 
 	    // see how we get the value from a group of checkboxes
-	    $.get("chains.php?pref="+$("input:radio[name=prefixes]:checked").val()+
-		  "&mode="+$("input:radio[name=ulysses]:checked").val()+
-		  "&words="+words, function(data) {
+	    $.get("chains.php?words="+words, function(data) {
 		      $("#chained").val(data);
 		      $("#spinning").hide();
 		      $("#spinner").show();

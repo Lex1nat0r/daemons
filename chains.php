@@ -24,24 +24,6 @@ class RPrefix implements Prefix {
      
 }
 
-// coherent prefix class - three prefixes per suffix
-class CPrefix implements Prefix {
-      // list of words in the prefix
-      public $prefList = array();
-      
-      // set up initial prefix list - prefixes are three elements deep
-      public function init($pref1, $pref2, $pref3) {
-      	     $this->prefList[0] = $pref1;
-	     $this->prefList[1] = $pref2;
-	     $this->prefList[2] = $pref3;
-      }
-
-      // get an ID for this prefix triplet
-      public function getID() {
-      	     return $this->prefList[0].':'.$this->prefList[1].':'.$this->prefList[2];
-      }     
-}
-
 // build functoin: build State table from designated file
 function build($filename) {
 	global $NONWORD;
@@ -75,12 +57,8 @@ function add($word) {
 		// create a new array of suffixes
         $suf = array();
 		// and some new prefixes
-	if ($_GET['pref'] == 'r') {
-	   $newPref = new RPrefix();
-	}
-	else {
-	   $newPref = new CPrefix();
-	}
+        $newPref = new RPrefix();
+
         $newPref->prefList = $prefix->prefList;
 		// now associate the suffix with the prefixes
         $statetab[$newPref->getID()] = $suf;
@@ -110,14 +88,8 @@ function generate($nwords) {
     $keys = array_keys($statetab);
     $p = $keys[rand(0, count($keys)-1)];
     
-    if ($_GET['pref'] == 'r') {
-       list($pref1, $pref2) = explode(':', $p);
-       $pref = new RPrefix();
-    }   
-    else {
-    	 list($pref1, $pref2, $pref3) = explode(':', $p);
-	 $pref = new CPrefix();
-    }   
+    list($pref1, $pref2) = explode(':', $p);
+    $pref = new RPrefix();
 
     $pref->prefList[0] = $pref1;
     $pref->prefList[1] = $pref2;
@@ -149,19 +121,8 @@ function generate($nwords) {
 // initial variable declarations
 $NONWORD = '\n';
 $statetab = array();
-if ($_GET['pref'] == 'r') {
-     $prefix = new RPrefix();
-}
-else {
-     $prefix = new CPrefix();
-}
-
-if ($_GET['mode'] == 'u') {
-   $filename = 'chains-ulysses.txt';
-}
-else {
-     $filename = 'chains.txt';
-}
+$prefix = new RPrefix();
+$filename = 'daemons.txt';
 
 $output = 'here we go';
 
